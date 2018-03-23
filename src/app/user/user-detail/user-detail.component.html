@@ -1,0 +1,30 @@
+<div id= "component">
+	<div id="pagetitle">
+		<span> {{ pagetitle }}</span>
+	</div>
+	<div id ="content">
+		<table class = "table table-sm" *ngIf= "user">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>User Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr *ngIf="user">
+						<td> {{ user.FirstName }} {{ user.LastName }}</td>
+						<td> {{ user.UserName }} </td>
+						<td> {{ user.Phone }} </td>
+						<td> {{ user.Email }} </td>
+						<td> {{ user.IsReviewer }}</td>
+						<td> {{ user.IsAdmin }} </td>
+						<td> {{ user.Active }} </td>
+							<a routerLink="/users/edit/{{user.Id}}" class="btn btn-warning"> Edit</a>
+							<button (click)="remove()" class= "btn btn-danger">Delete</button>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+</div>

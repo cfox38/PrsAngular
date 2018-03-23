@@ -1,0 +1,64 @@
+<div id ="component">
+	<div id="pagetitle">
+		<span> {{ pagetitle }} </span>
+	</div>
+	<div id="content" *ngIf="user">
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userfirstname">FirstName: </label>
+			<input [(ngModel)]='user.FirstName' name ='FirstName' type='text'
+			class="from-control col-sm-6" Id="userfirstname" aria-describedby="FirstNameHelp" placeholder="FirstName">
+			<small Id = "FirstNameHelp" class= "form-text text-muted col-sum-2"> The first name </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userlastname">LastName: </label>
+			<input [(ngModel)]='user.LastName' name ='LastName' type='text'
+			class="from-control col-sm-6" Id="userlastname" aria-describedby="LastNameHelp" placeholder="LastName">
+			<small Id = "LastNameHelp" class= "form-text text-muted col-sum-2"> The last name </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="username">UserName: </label>
+			<input [(ngModel)]='user.UserName' name ='UserName' type='text'
+			class="from-control col-sm-6" Id="username" aria-describedby="UserNameHelp" placeholder="UserName">
+			<small Id = "UserNameHelp" class= "form-text text-muted col-sum-2"> The user name </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userpassword">Password: </label>
+			<input [(ngModel)]='user.Password' name ='Password' type='text'
+			class="from-control col-sm-6" Id="userusername" aria-describedby="PasswordHelp" placeholder="Password">
+			<small Id = "PasswordHelp" class= "form-text text-muted col-sum-2"> The password </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userphone">Phone: </label>
+			<input [(ngModel)]='user.Phone' name ='Phone' type='text'
+			class="from-control col-sm-6" Id="phone" aria-describedby="PhoneHelp" placeholder="Phone">
+			<small Id = "Phone" class= "form-text text-muted col-sum-2"> The phone </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="useremail">Email: </label>
+			<input [(ngModel)]='user.Email' name ='Email' type='text'
+			class="from-control col-sm-6" Id="useremail" aria-describedby="EmailHelp" placeholder="Email">
+			<small Id = "EmailHelp" class= "form-text text-muted col-sum-2"> The email </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="isreviewer">IsReviewer: </label>
+			<input [(ngModel)]='user.IsReviewer' name ='IsReviewer' type='checkbox'
+			class="from-control col-sm-6" Id="userIsReviewer" aria-describedby="IsReviewer" placeholder="IsReviewer">
+			<small Id = "IsReviewerHelp" class= "form-text text-muted col-sum-2"> Is Reviewer </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userIsAdmin">IsAdmin: </label>
+			<input [(ngModel)]='user.IsAdmin' name ='IsAdmin' type='checkbox'
+			class="from-control col-sm-6" Id="userIsAdmin" aria-describedby="IsAdminHelp" placeholder="IsAdmin">
+			<small Id = "IsAdminHelp" class= "form-text text-muted col-sum-2"> Is Admin </small> 
+		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userIsAactive">IsActive: </label>
+			<input [(ngModel)]='user.IsActive' name ='IsActive' type='checkbox'
+			class="from-control col-sm-6" Id="userIsActive" aria-describedby="IsActive" placeholder="IsActive">
+			<small Id = "IsActive" class= "form-text text-muted col-sum-2"> Is Active </small> 
+		</div>
+	<div>
+	<button (click)="Change()" class="btn btn-warning" >Change</button>
+</div>
+</div>
+</div>
