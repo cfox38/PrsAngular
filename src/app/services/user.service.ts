@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable0;'
+import { Observable } from 'rxjs/Observable';
 
 import { User } from '../models/user';
 
@@ -14,16 +14,17 @@ export class UserService {
   List(): Observable<User[]> {
   	return this.http.get(url+"List") as Observable<User[]>;
 }
-  Get(): Observable<User> {
-  	return this.http.get(url+"Get/"+Id) as Observable<User>;
+  Get(Id): Observable<User> {
+  	console.log("Id is", Id);
+    return this.http.get(url+"Get/"+Id) as Observable<User>;
 }
-  Create(): Observable<any> {
+  Create(user): Observable<any> {
   	return this.http.post(url+"Create", user) as Observable<any>;
 }
-  Change(): Observable<User[]> {
+  Change(user): Observable<any> {
   	return this.http.post(url+"Change", user) as Observable<any>;
 }
-  Remove(): Observable<User[]> {
+  Remove(user): Observable<any> {
   	return this.http.post(url+"Remove", user) as Observable<any>;
 }
 }
