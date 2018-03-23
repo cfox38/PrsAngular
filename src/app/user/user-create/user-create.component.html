@@ -57,6 +57,12 @@
 			class="from-control col-sm-6" Id="userActive" aria-describedby="Active" placeholder="Active">
 			<small Id = "Active" class= "form-text text-muted col-sum-2"> Active </small> 
 		</div>
+		<div class ="form-group row">
+			<label class = 'col-form-label col-sm-2' for="userActive">Created: </label>
+			<input [(ngModel)]='user.DateCreated' name ='DateCreated' type='text'
+			class="from-control col-sm-6" Id="userActive" aria-describedby="Active" placeholder="Active">
+			<small Id = "Active" class= "form-text text-muted col-sum-2"> Date Created </small> 
+		</div>
 	<div>
 	<button (click)="Create()" class="btn btn-success" >Add</button>
 </div>

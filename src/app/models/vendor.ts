@@ -1,37 +1,43 @@
 export class Vendor {
 	Id: number;
-	Username: string;
-	Password: string;
-	Firstname: string;
-	Lastname: string;
+	Code: string;
+	Name: string;
+	Address: string;
+	City: string;
+	State: string;
+	Zip: string;
 	Phone: string;
 	Email: string;
-	IsReviewer: boolean;
-	IsAdmin: boolean;
+	IsPreapproved: boolean;
 	Active: boolean;
+	DateCreated: string;
 
 	constructor(
 
 	Id: number,
-	Username: string,
-	Password: string,
-	Firstname: string,
-	Lastname: string,
+	Code: string,
+	Name: string,
+	Address: string,
+	City: string,
+	State: string,
+	Zip: string,
 	Phone: string,
 	Email: string,
-	IsReviewer: boolean,
-	IsAdmin: boolean,
+	IsPreapproved: boolean,
 	Active: boolean
+
 	) {
 	this.Id = Id;
-	this.Username = Username;
-	this.Password = Password;
-	this.Firstname = Firstname;
-	this.Lastname = Lastname;
+	this.Code = Code;
+	this.Name = Name;
+	this.Address = Address;
+	this.City = City;
+	this.State = State;
+	this.Zip = Zip; 
 	this.Phone = Phone;
-	this.Email = Email;
-	this.IsReviewer = IsReviewer;
-	this.IsAdmin = IsAdmin;
+	this.Email = Email
+	this.IsPreapproved= IsPreapproved;
 	this.Active = Active;
+	this.DateCreated = new Date().toISOString();
 	}
 }

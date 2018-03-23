@@ -40,7 +40,7 @@
 			<small Id = "EmailHelp" class= "form-text text-muted col-sum-2"> The email </small> 
 		</div>
 		<div class ="form-group row">
-			<label class = 'col-form-label col-sm-2' for="isreviewer">IsReviewer: </label>
+			<label class = 'col-form-label col-sm-2' for="userisreviewer">IsReviewer: </label>
 			<input [(ngModel)]='user.IsReviewer' name ='IsReviewer' type='checkbox'
 			class="from-control col-sm-6" Id="userIsReviewer" aria-describedby="IsReviewer" placeholder="IsReviewer">
 			<small Id = "IsReviewerHelp" class= "form-text text-muted col-sum-2"> Is Reviewer </small> 
@@ -52,10 +52,10 @@
 			<small Id = "IsAdminHelp" class= "form-text text-muted col-sum-2"> Is Admin </small> 
 		</div>
 		<div class ="form-group row">
-			<label class = 'col-form-label col-sm-2' for="userIsAactive">IsActive: </label>
-			<input [(ngModel)]='user.IsActive' name ='IsActive' type='checkbox'
-			class="from-control col-sm-6" Id="userIsActive" aria-describedby="IsActive" placeholder="IsActive">
-			<small Id = "IsActive" class= "form-text text-muted col-sum-2"> Is Active </small> 
+			<label class = 'col-form-label col-sm-2' for="userActive">Active: </label>
+			<input [(ngModel)]='user.Active' name ='Active' type='checkbox'
+			class="from-control col-sm-6" Id="userActive" aria-describedby="Active" placeholder="Active">
+			<small Id = "Active" class= "form-text text-muted col-sum-2"> Active </small> 
 		</div>
 	<div>
 	<button (click)="Change()" class="btn btn-warning" >Change</button>

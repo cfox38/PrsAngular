@@ -17,6 +17,12 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 
+import { VendorService } from './services/vendor.service';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +31,6 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
     AboutComponent,
     MenuComponent,
     MenuItemComponent,
-    VendorServiceComponent,
     VendorListComponent,
     VendorDetailComponent,
     VendorCreateComponent,
@@ -43,7 +48,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 
   ],
   providers: [
-    UserService
+    UserService,
     VendorService
   ],
   bootstrap: [AppComponent]

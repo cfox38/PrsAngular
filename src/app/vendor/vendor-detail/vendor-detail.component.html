@@ -1,3 +1,49 @@
-<p>
-  vendor-detail works!
-</p>
+<div id="component">
+   <div id="pagetitle">
+       <span>{{ pagetitle }}</span>
+   </div>
+   <div id="content"  *ngIf="vendor">
+       <table class="table table-sm">
+           <tbody>
+               <tr>
+                   <th>Code</th>
+                   <td>{{vendor.Code}}</td>
+               </tr>
+               <tr>
+                   <th>Name</th>
+                   <td>{{vendor.Name}}</td>
+               </tr>
+               <tr>
+                   <th>Address</th>
+                   <td>{{vendor.Address}}</td>
+               </tr>
+               <tr>
+                   <th>City</th>
+                   <td>{{vendor.City}}</td>
+               </tr>
+               <tr>
+                   <th>State</th>
+                   <td>{{vendor.State}}</td>
+               </tr>
+                <tr>
+                   <th>Phone</th>
+                   <td>{{vendor.Phone}}</td>
+               </tr>
+                <tr>
+                   <th>Email</th>
+                   <td>{{vendor.Email}}</td>
+               </tr>
+               <tr>
+                   <th>Preapproved</th>
+                   <td>{{ vendor.IsPreapproved ? "Yes" : ""}}</td>
+               </tr>
+               <tr>               
+                    <th>Active</th>
+                   <td>{{ vendor.Active ? "Yes" : ""}}</td>
+               </tr>
+           </tbody>
+       </table>
+       <a routerLink="/vendors/edit/{{vendor.Id}}" class="btn btn-warning">Edit</a>
+       <button (click)="remove()" class="btn btn-danger">Delete</button>
+   </div>
+</div>

@@ -11,6 +11,9 @@
 					<th>User Name</th>
 					<th>Phone</th>
 					<th>Email</th>
+					<th>IsReviewer</th>
+					<th>IsAdmin</th>
+					<th>Active</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -21,6 +24,9 @@
 						<td> {{ user.UserName }} </td>
 						<td> {{ user.Phone }} </td>
 						<td> {{ user.Email }} </td>
+						<td> {{ user.IsReviewer}} </td>
+						<td> {{ user.IsAdmin}} </td>
+						<td> {{ user.Active}} </td>
 						<td> 
 							<a routerLink="/users/detail/{{user.Id}}">Detail</a> | 
 							<a routerLink="/users/edit/{{user.Id}}">Edit</a>

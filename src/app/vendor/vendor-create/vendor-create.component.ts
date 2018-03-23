@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { VendorService } from '../../services/vendor.service';
+import { Vendor } from '../../models/vendor';
+
+
 
 @Component({
   selector: 'app-vendor-create',
@@ -7,9 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorCreateComponent implements OnInit {
 
-  constructor() { }
+pagetitle: string = "Vendor Create";
+vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', false, true);
 
+  constructor(
+  	private VendorSvc: VendorService,
+  	private router: Router
+
+  	) { }
+
+  Create(): void {
+  	console.log("Before Create:", this.vendor);
+    this.vendor.DateCreated = new Date().toISOString();
+  	this.VendorSvc.Create(this.vendor)
+  		.subscribe(res => {
+  			console.log(res);
+  			  	this.router.navigateByUrl("/vendors/list");
+  		});
+  }
   ngOnInit() {
+
   }
 
 }
+
+

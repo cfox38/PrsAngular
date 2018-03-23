@@ -1,3 +1,42 @@
-<p>
-  vendor-list works!
-</p>
+<div id= "component">
+	<div id = "pagetitle">
+		<span> {{ pagetitle }} </span> | <a routerLink="/vendors/create">Create New </a>
+	</div>
+	<div id= "content">
+		<table class = "table table-sm">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>Address</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Zip</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>IsPreapproved</th>
+					<th>Active</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr *ngFor=" let vendor of vendors">
+						<td> {{ vendor.Code }}</td>
+						<td> {{ vendor.Name }} </td>
+						<td> {{ vendor.Address }} </td>
+						<td> {{ vendor.City }} </td>
+						<td> {{ vendor.State }} </td>
+						<td> {{ vendor.Zip }} </td>
+						<td> {{ vendor.Phone }}</td>
+						<td> {{ vendor.Email }}</td>
+						<td> {{ vendor.IsPreapproved }} </td>
+						<td> {{ vendor.Active }}</td>
+						<td> 
+							<a routerLink="/vendors/detail/{{vendor.Id}}">Detail</a> | 
+							<a routerLink="/vendors/edit/{{vendor.Id}}">Edit</a>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+</div>
