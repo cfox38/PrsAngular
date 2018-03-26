@@ -23,6 +23,12 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 
+import { ProductService} from './services/product.service';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +44,11 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
-    UserEditComponent
+    UserEditComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +59,8 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
   ],
   providers: [
     UserService,
-    VendorService
+    VendorService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

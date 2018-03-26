@@ -1,0 +1,34 @@
+<div id= "component">
+	<div id = "pagetitle">
+		<span> {{ pagetitle }} </span> | <a routerLink="/products/create">Create New </a>
+	</div>
+	<div id= "content">
+		<table class = "table table-sm">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>PartNumber</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Vendor</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr *ngFor=" let product of products">
+						<td> {{ product.Id }}</td>
+						<td> {{ product.VendorPartNumber }} </td>
+						<td> {{ product.Name }} </td>
+						<td> {{ product.Price | currency }} </td>
+						<td> {{ product.Unit }} </td>
+						<td> {{ product.Vendor.Name }} </td>
+						<td> 
+							<a routerLink="/products/detail/{{product.Id}}">Detail</a> | 
+							<a routerLink="/products/edit/{{product.Id}}">Edit</a>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+</div>
