@@ -1,6 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+
+    "baseUrl": "src",
+    "paths": {
+      "@models/*": ["app/models/*"],
+      "@services/*": ["app/services/*"],
+      "@support/*": ["app/support/*"],
+      "@user/*": ["app/user/*"],
+      "@vendor/*": ["app/vendor/*"],
+      "@product/*": ["app/product/*"],
+      "@purchaseRequest/*": ["app/purchaseRequest/*"],
+      "@purchaseRequestLineitem/*": ["app/purchaseRequestLineitem/*"]
+    }, 
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
