@@ -29,6 +29,15 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 
+import { PurchaseRequestService } from './services/purchaserequest.service';
+import { PurchaseRequestCreateComponent } from './purchase-request/purchaserequest-create/purchaserequest-create.component';
+import { PurchaseRequestDetailComponent } from './purchase-request/purchaserequest-detail/purchaserequest-detail.component';
+import { PurchaseRequestEditComponent } from './purchase-request/purchaserequest-edit/purchaserequest-edit.component';
+import { PurchaseRequestListComponent } from './purchase-request/purchaserequest-list/purchaserequest-list.component';
+import { PurchaserequestLinesComponent } from './purchase-request/purchaserequest-lines/purchaserequest-lines.component';
+import { PurchaserequestReviewItemComponent } from './purchase-request/purchaserequest-review-item/purchaserequest-review-item.component';
+import { PurchaserequestReviewComponent } from './purchase-request/purchaserequest-review/purchaserequest-review.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +57,15 @@ import { ProductListComponent } from './product/product-list/product-list.compon
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductListComponent
+    ProductListComponent,
+    PurchaseRequestCreateComponent,
+    PurchaseRequestDetailComponent,
+    PurchaseRequestEditComponent,
+    PurchaseRequestListComponent,
+    PurchaserequestLinesComponent,
+    PurchaserequestReviewItemComponent,
+    PurchaserequestReviewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +77,8 @@ import { ProductListComponent } from './product/product-list/product-list.compon
   providers: [
     UserService,
     VendorService,
-    ProductService
+    ProductService,
+    PurchaseRequestService
   ],
   bootstrap: [AppComponent]
 })
