@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { SystemService } from '@services/system.service';
 
 
 @Component({
@@ -14,12 +15,19 @@ export class UserDetailComponent implements OnInit {
 
 	pagetitle: string = "User Detail";
 	user: User;
+  isHidden: boolean = true;
+
 
   constructor(
   	private UserSvc: UserService,
     private router: Router,
+    private sys: SystemService,
   	private route: ActivatedRoute
   	) { }
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   remove() : void {
     this.UserSvc.Remove(this.user)

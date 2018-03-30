@@ -1,0 +1,10 @@
+header {
+  text-align: left;
+  font-size: 1.5em;
+}
+footer {
+
+}
+#router-outlet {
+  padding: 20px;
+}

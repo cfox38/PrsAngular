@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { PurchaseRequestService } from '../../services/purchaserequest.service';
 import { PurchaseRequest } from '../../models/purchaserequest';
-
+import { SystemService } from '../../services/system.service';
 
 @Component({
   selector: 'app-purchaserequest-detail',
@@ -13,12 +13,13 @@ import { PurchaseRequest } from '../../models/purchaserequest';
 export class PurchaseRequestDetailComponent implements OnInit {
 
 pagetitle: string = "PurchaseRequest Detail";
-	purchaserequest: PurchaseRequest;
-  isHidden: boolean = true;
+purchaserequest: PurchaseRequest;
+isHidden: boolean = true;
 
   constructor(
   	private PurchaseRequestSvc: PurchaseRequestService,
     private router: Router,
+    private sys: SystemService,
   	private route: ActivatedRoute
   	) { }
 

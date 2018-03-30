@@ -1,3 +1,10 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
-<footer> This is the footer </footer>
+<div [hidden]="isLogin">
+  <header>PRS Purchase Request System</header>
+  <app-menu></app-menu>
+</div>
+<div id="router-outlet">
+  <router-outlet></router-outlet>
+</div>
+<div [hidden]="isLogin">
+  <footer class="text-center text-light bg-secondary"></footer>
+</div>

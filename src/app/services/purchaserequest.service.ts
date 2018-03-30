@@ -11,9 +11,9 @@ export class PurchaseRequestService {
 
   constructor(private http: HttpClient) { }
 
-  //ReviewList(): Observable<PurchaseRequest[]> {
-    //return this.http.get(url+ "ReviewList") as Observable<PurchaseRequest[]>;
-  //}
+  ReviewList(): Observable<PurchaseRequest[]> {
+    return this.http.get(url+ "ReviewList") as Observable<PurchaseRequest[]>;
+  }
 
   List(): Observable<PurchaseRequest[]> {
   	return this.http.get(url+"List") as Observable<PurchaseRequest[]>;

@@ -1,3 +1,48 @@
-<p>
-  purchaserequest-lines works!
-</p>
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> | 
+    <a *ngIf="purchaserequest" routerLink="/purchaserequestlineitems/create/{{purchaserequest.Id}}">Create New</a>
+  </div>
+  <div id="content" *ngIf="purchaserequest">
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+      </tr>
+      <tr>
+        <td>{{purchaserequest.Id}}</td>
+        <td>{{purchaserequest.Description }}</td>
+        <td>{{purchaserequest.Justification}}</td>
+        <td>{{purchaserequest.Status}}</td>
+        <td>{{purchaserequest.Total | currency}}</td>
+        <td>{{purchaserequest.User.Lastname}}</td>
+      </tr>
+    </table>
+    <hr />
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let purchaserequestlineitem of purchaserequest.PurchaseRequestLineItems">
+        <td>{{ purchaserequestlineitem.Id }}</td>
+        <td>{{ purchaserequestlineitem.Product.Name }}</td>
+        <td>{{ purchaserequestlineitem.Quantity }}</td>
+        <td>{{ purchaserequestlineitem.Product.Price | currency }}</td>
+        <td>{{ (purchaserequestlineitem.Quantity * purchaserequestlineitem.Product.Price) | currency }}</td>
+        <td>
+            <a routerLink="/purchaserequestlineitem/detail/{{this.purchaserequest.Id}}/{{purchaserequestLineitem.Id}}">Detail</a> |
+            <a routerLink="/purchaserequestlineitem/edit/{{this.purchaserequest.Id}}/{{purchaserequestLineitem.Id}}">Edit</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

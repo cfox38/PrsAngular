@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '@services/system.service';
 import { VendorService } from '../../services/vendor.service';
 import { Vendor } from '../../models/vendor';
 
@@ -13,12 +14,19 @@ export class VendorDetailComponent implements OnInit {
 
 pagetitle: string = "Vendor Detail";
 	vendor: Vendor;
+    isHidden: boolean = true;
+
 
   constructor(
   	private VendorSvc: VendorService,
     private router: Router,
+    private sys: SystemService,
   	private route: ActivatedRoute
   	) { }
+
+   verify(): void {
+    this.isHidden = false;
+  }
 
   remove() : void {
     this.VendorSvc.Remove(this.vendor)

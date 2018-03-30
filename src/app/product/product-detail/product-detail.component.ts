@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
+import { SystemService } from '../../services/system.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,12 +14,18 @@ export class ProductDetailComponent implements OnInit {
 
 pagetitle: string = "Product Detail";
 	product: Product;
+  isHidden: boolean= true;
 
   constructor(
   	private ProductSvc: ProductService,
+    private sys: SystemService,
     private router: Router,
   	private route: ActivatedRoute
   	) { }
+
+    verify(): void {
+      this.isHidden = false;
+    }
 
   remove() : void {
     this.ProductSvc.Remove(this.product)

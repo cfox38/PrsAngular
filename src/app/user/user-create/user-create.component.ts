@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { SystemService } from '@services/system.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ user: User = new User(0, '', '', '', '', '', '', false, false, true);
 
   constructor(
   	private UserSvc: UserService,
+    private sys: SystemService,
   	private router: Router
 
   	) { }

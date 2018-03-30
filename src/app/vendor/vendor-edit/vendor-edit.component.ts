@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '@services/system.service';
 import { VendorService } from '../../services/vendor.service';
 import { Vendor } from '../../models/vendor';
 
@@ -18,6 +19,7 @@ vendor: Vendor;
   constructor(
   	private VendorSvc: VendorService,
   	private route: ActivatedRoute,
+    private sys: SystemService,
   	private router: Router
 
   	) { }

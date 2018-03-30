@@ -6,6 +6,7 @@ import { PurchaseRequest } from '../../models/purchaserequest';
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { SystemService } from '../../services/system.service';
 
 
 @Component({
@@ -22,6 +23,7 @@ users: User[];
   constructor(
   	private PurchaseRequestSvc: PurchaseRequestService,
     private UserSvc: UserService,
+    private sys: SystemService,
   	private router: Router
 
   	) { }

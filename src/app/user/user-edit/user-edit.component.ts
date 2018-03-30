@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { SystemService } from '@services/system.service';
+
 
 @Component({
   selector: 'app-user-edit',
@@ -17,6 +19,7 @@ user: User;
   constructor(
   	private UserSvc: UserService,
   	private route: ActivatedRoute,
+    private sys: SystemService,
   	private router: Router
 
   	) { }

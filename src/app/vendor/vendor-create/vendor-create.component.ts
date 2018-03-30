@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SystemService } from '@services/system.service';
 import { VendorService } from '../../services/vendor.service';
 import { Vendor } from '../../models/vendor';
 
@@ -18,23 +19,20 @@ vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', false, true);
 
   constructor(
   	private VendorSvc: VendorService,
+    private sys: SystemService,
   	private router: Router
 
   	) { }
 
-  Create(): void {
-  	console.log("Before Create:", this.vendor);
-    this.vendor.DateCreated = new Date().toISOString();
-  	this.VendorSvc.Create(this.vendor)
-  		.subscribe(res => {
-  			console.log(res);
-  			  	this.router.navigateByUrl("/vendors/list");
-  		});
+  create(): void {
+    this.VendorSvc.Create(this.vendor)
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigateByUrl("/vendors/list");
+      });
   }
-  ngOnInit() {
 
+  ngOnInit() { 
   }
 
 }
-
-

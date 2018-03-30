@@ -6,7 +6,7 @@ import { Product } from '../../models/product';
 
 import { VendorService } from '../../services/vendor.service';
 import { Vendor } from '../../models/vendor';
-
+import { SystemService } from '../../services/system.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -22,6 +22,7 @@ vendors: Vendor[];
   constructor(
   	private ProductSvc: ProductService,
     private VendorSvc: VendorService,
+    private sys: SystemService,
   	private route: ActivatedRoute,
   	private router: Router
 

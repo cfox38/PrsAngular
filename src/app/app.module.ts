@@ -16,6 +16,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 import { VendorService } from './services/vendor.service';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
@@ -34,9 +35,19 @@ import { PurchaseRequestCreateComponent } from './purchase-request/purchasereque
 import { PurchaseRequestDetailComponent } from './purchase-request/purchaserequest-detail/purchaserequest-detail.component';
 import { PurchaseRequestEditComponent } from './purchase-request/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaseRequestListComponent } from './purchase-request/purchaserequest-list/purchaserequest-list.component';
-import { PurchaserequestLinesComponent } from './purchase-request/purchaserequest-lines/purchaserequest-lines.component';
-import { PurchaserequestReviewItemComponent } from './purchase-request/purchaserequest-review-item/purchaserequest-review-item.component';
-import { PurchaserequestReviewComponent } from './purchase-request/purchaserequest-review/purchaserequest-review.component';
+import { PurchaseRequestLinesComponent } from './purchase-request/purchaserequest-lines/purchaserequest-lines.component';
+import { PurchaseRequestReviewItemComponent } from './purchase-request/purchaserequest-review-item/purchaserequest-review-item.component';
+import { PurchaseRequestReviewComponent } from './purchase-request/purchaserequest-review/purchaserequest-review.component';
+
+import { PurchaseRequestLineItemService } from './services/purchaserequestlineitem.service'
+import { PurchaseRequestLineItemListComponent  } from './purchase-request-line-item/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
+import { PurchaseRequestLineItemDetailComponent  } from './purchase-request-line-item/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component';
+import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-item/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
+import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-item/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
+
+// import { SortPipe } from './pipes/sort.pipe';
+import { SystemService } from '@services/system.service';
+//import { CanReviewGuard } from '@guards/can-review.guard';
 
 
 @NgModule({
@@ -54,6 +65,7 @@ import { PurchaserequestReviewComponent } from './purchase-request/purchasereque
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
+    UserLoginComponent,
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
@@ -62,9 +74,16 @@ import { PurchaserequestReviewComponent } from './purchase-request/purchasereque
     PurchaseRequestDetailComponent,
     PurchaseRequestEditComponent,
     PurchaseRequestListComponent,
-    PurchaserequestLinesComponent,
-    PurchaserequestReviewItemComponent,
-    PurchaserequestReviewComponent,
+    PurchaseRequestLinesComponent,
+    PurchaseRequestReviewItemComponent,
+    PurchaseRequestReviewComponent,
+    PurchaseRequestLineItemCreateComponent,
+    PurchaseRequestLineItemDetailComponent,
+    PurchaseRequestLineItemEditComponent,
+    PurchaseRequestLineItemListComponent,
+    // SortPipe,
+
+
 
   ],
   imports: [
@@ -78,7 +97,10 @@ import { PurchaserequestReviewComponent } from './purchase-request/purchasereque
     UserService,
     VendorService,
     ProductService,
-    PurchaseRequestService
+    PurchaseRequestService,
+    PurchaseRequestLineItemService,
+    SystemService,
+    // CanReviewGuard,
   ],
   bootstrap: [AppComponent]
 })
