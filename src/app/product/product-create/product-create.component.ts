@@ -17,7 +17,7 @@ import { SystemService } from '../../services/system.service';
 export class ProductCreateComponent implements OnInit {
 
 pagetitle: string = "Product Create";
-product: Product = new Product(0, 0, '', '', 0, 'Each', '', true);
+product: Product = new Product(0, 0, '', '', 10, 'Each', '', true);
 vendors: Vendor[];
 
   constructor(
@@ -33,8 +33,6 @@ vendors: Vendor[];
   }
 
   Create(): void {
-  	console.log("Before Create:", this.product);
-    //this.product.DateCreated = new Date().toISOString();
   	this.ProductSvc.Create(this.product)
   		.subscribe(res => {
   			console.log(res);

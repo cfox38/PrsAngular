@@ -2,32 +2,43 @@
   <div id="pagetitle">
     <span>{{ pagetitle }}</span>
   </div>
-  <div id="content">
+  <div id="content" *ngIf="purchaserequest">
     <table class="table table-sm">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Description</th>
-          <th>Justification</th>
-          <th>Status</th>
-          <th>Total</th>
-          <th>User</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let purchaserequest of purchaserequests">
-          <td>{{ purchaserequest.Id }}</td>
-          <td>{{ purchaserequest.Description }}</td>
-          <td>{{ purchaserequest.Justification }}</td>
-          <td>{{ purchaserequest.Status }}</td>
-          <td>{{ purchaserequest.Total | currency }}</td>
-          <td>{{ purchaserequest.User.LastName }}</td>
-          <td>
-            <a routerLink="/purchaserequests/review/{{purchaserequest.Id}}">Review</a>
-          </td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+      </tr>
+      <tr>
+        <td>{{purchaserequest.Id}}</td>
+        <td>{{purchaserequest.Description }}</td>
+        <td>{{purchaserequest.Justification}}</td>
+        <td>{{purchaserequest.Status}}</td>
+        <td>{{purchaserequest.Total | currency}}</td>
+        <td>{{purchaserequest.User.LastName}}</td>
+      </tr>
     </table>
+    <hr />
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr *ngFor="let purchaserequestlineitem of purchaserequest.purchaserequestlineitems">
+        <td>{{ purchaserequestlineitem.Id }}</td>
+        <td>{{ purchaserequestlineitem.Product.Name }}</td>
+        <td>{{ purchaserequestlineitem.Quantity }}</td>
+        <td>{{ purchaserequestlineitem.Product.Price | currency }}</td>
+        <td>{{ (purchaserequestlineitem.Quantity * purchaserequestlineitem.Product.Price) | currency }}</td>
+      </tr>
+    </table>
+    <button (click)="approve()" class="btn btn-success">Approve</button> |
+    <button (click)="reject()" class="btn btn-danger">Reject</button>
   </div>
 </div>

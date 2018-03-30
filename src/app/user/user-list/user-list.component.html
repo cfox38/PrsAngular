@@ -1,38 +1,37 @@
-<div id= "component">
-	<div id = "pagetitle">
-		<span> {{ pagetitle }} </span> | <a routerLink="/users/create">Create New </a>
-	</div>
-	<div id= "content">
-		<table class = "table table-sm">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-					<th>User Name</th>
-					<th>Phone</th>
-					<th>Email</th>
-					<th>IsReviewer</th>
-					<th>IsAdmin</th>
-					<th>Active</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-				<tbody>
-					<tr *ngFor="let user of users">
-						<td>{{ user.Id }} </td>
-						<td> {{ user.FirstName }} {{ user.LastName }}</td>
-						<td> {{ user.UserName }} </td>
-						<td> {{ user.Phone }} </td>
-						<td> {{ user.Email }} </td>
-						<td> {{ user.IsReviewer}} </td>
-						<td> {{ user.IsAdmin}} </td>
-						<td> {{ user.Active}} </td>
-						<td> 
-							<a routerLink="/users/detail/{{user.Id}}">Detail</a> | 
-							<a routerLink="/users/edit/{{user.Id}}">Edit</a>
-						</td>
-					</tr>
-				</tbody>
-		</table>
-	</div>
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> | <a routerLink="/users/create">Create New</a>
+  </div>
+  <div id="content" *ngIf="users">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Id')">Id</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('LastName')">Name</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('UserName')">User Name</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Phone')">Phone</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Email')">Email</a></th>
+          <th><a class="btn btn-link font-weight-bold">Privs</a></th>
+          <th><a class="btn btn-link font-weight-bold">Actions</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | sort:sortBy">
+          <td>{{ user.Id }}</td>
+          <td>{{ user.FirstName }} {{ user.LastName }}</td>
+          <td>{{ user.UserName }}</td>
+          <td>{{ user.Phone }}</td>
+          <td>{{ user.Email }}</td>
+          <td>
+              {{ user.IsReviewer ? "REV" : "" }}
+              {{ user.IsAdmin ? "ADM" : "" }}
+          </td>
+          <td>
+            <a routerLink="/users/detail/{{user.Id}}">Detail</a> |
+            <a routerLink="/users/edit/{{user.Id}}">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

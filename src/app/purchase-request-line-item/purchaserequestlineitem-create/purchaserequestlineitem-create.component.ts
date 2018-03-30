@@ -6,6 +6,8 @@ import { PurchaseRequestLineItem } from '../../models/purchaserequestlineitem';
 
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
+import { SystemService } from '../../services/system.service';
+
 
 @Component({
   selector: 'app-purchaserequestlineitem-create',
@@ -15,12 +17,12 @@ import { Product } from '../../models/product';
 export class PurchaseRequestLineItemCreateComponent implements OnInit {
 
 pagetitle: string = "PurchaseRequestLineItem Create";
+purchaserequestId: number;
 purchaserequestlineitem: PurchaseRequestLineItem = new PurchaseRequestLineItem(0,0,0,1);
 products: Product[];
-purchaserequestid: number;
 
   constructor(
-  	//private sys: SystemService,
+  	private sys: SystemService,
   	private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
     private ProductSvc: ProductService,
     private route: ActivatedRoute,
@@ -33,12 +35,12 @@ purchaserequestid: number;
   }
 
   Create(): void {
-  	this.purchaserequestlineitem.PurchaseRequestId = this.purchaserequestid;
+  	this.purchaserequestlineitem.PurchaseRequestId = this.purchaserequestId;
     console.log(this.purchaserequestlineitem);
   	this.PurchaseRequestLineItemSvc.Create(this.purchaserequestlineitem)
   		.subscribe(res => {
   			console.log(res);
-  			  	this.router.navigateByUrl("/purchaserequests/lines/" + this.purchaserequestid);
+  			  	this.router.navigateByUrl("/purchaserequests/lines/" + this.purchaserequestId);
   		});
   }
 
@@ -53,7 +55,7 @@ purchaserequestid: number;
   ngOnInit() {
   	this.route.params
       .subscribe(param => {
-        this.purchaserequestid = +param ["Id"];
+        this.purchaserequestId = +param ["Id"];
         this.getProductsList();
       });
 

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { SystemService } from '@services/system.service';
 import { User } from '../models/user';
 
-const url = "http://localhost:58248/Users/";
+const url = "http://localhost:52140/Users/";
 
 @Injectable()
 export class UserService {
@@ -25,8 +25,8 @@ export class UserService {
     return this.http.get(furl) as Observable<User[]>;
     // return this.http.get(url+"List") as Observable<User[]>;
   }
-  Get(id): Observable<User> {
-    let furl = this.sys.url("Users", "Get", id);
+  Get(Id): Observable<User> {
+    let furl = this.sys.url("Users", "Get", Id);
     return this.http.get(furl) as Observable<User>;
     // return this.http.get(url+"Get/"+id) as Observable<User>;
   }

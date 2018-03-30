@@ -29,6 +29,5 @@ export class Product {
 	this.Unit = Unit;
 	this.PhotoPath = PhotoPath;
 	this.Active = Active;
-	this.DateCreated = new Date();
 	}
 }

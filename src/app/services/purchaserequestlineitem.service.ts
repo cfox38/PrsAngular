@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { SystemService } from '../services/system.service';
 
 import { PurchaseRequestLineItem } from '../models/purchaserequestlineitem';
 
-const url = "http://localhost:58248/PurchaseRequestLineItems/";
+const url = "http://localhost:52140/PurchaseRequestLineItems/";
 
 @Injectable()
 export class PurchaseRequestLineItemService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private sys: SystemService
+    ) { }
 
   List(): Observable<PurchaseRequestLineItem[]> {
     return this.http.get(url+"List") as Observable<PurchaseRequestLineItem[]>;

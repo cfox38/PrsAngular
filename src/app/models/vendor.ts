@@ -38,6 +38,5 @@ export class Vendor {
 	this.Email = Email
 	this.IsPreapproved= IsPreapproved;
 	this.Active = Active;
-	this.DateCreated = new Date().toISOString();
 	}
 }

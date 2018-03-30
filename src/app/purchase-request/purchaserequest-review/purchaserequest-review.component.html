@@ -16,13 +16,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let purchaserequest of purchaserequests">
+        <tr *ngFor=" let purchaserequest of purchaserequests">
           <td>{{ purchaserequest.Id }}</td>
           <td>{{ purchaserequest.Description }}</td>
           <td>{{ purchaserequest.Justification }}</td>
           <td>{{ purchaserequest.Status }}</td>
           <td>{{ purchaserequest.Total | currency }}</td>
-          <td>{{ purchaserequest.User.Lastname }}</td>
+          <td>{{ purchaserequest.User.LastName }}</td>
           <td>
             <a routerLink="/purchaserequests/review/{{purchaserequest.Id}}">Review</a>
           </td>

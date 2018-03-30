@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '@services/system.service';
+
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
-import { SystemService } from '@services/system.service';
 
 
 @Component({
@@ -20,8 +21,8 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
   	private UserSvc: UserService,
-    private router: Router,
     private sys: SystemService,
+    private router: Router,
   	private route: ActivatedRoute
   	) { }
 

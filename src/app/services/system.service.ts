@@ -2,7 +2,7 @@ import { User } from '@models/user';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 
-const baseUrl = "http://localhost:58248";
+const baseUrl = "http://localhost:52140";
 
 export class SystemService {
 

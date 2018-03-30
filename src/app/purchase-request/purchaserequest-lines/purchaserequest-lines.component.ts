@@ -8,7 +8,7 @@ import { PurchaseRequestLineItem } from '../../models/purchaserequestlineitem';
 import { SystemService } from '../../services/system.service';
 
 @Component({
-  selector: 'app-purchase-request-lines',
+  selector: 'app-purchaserequest-lines',
   templateUrl: './purchaserequest-lines.component.html',
   styleUrls: ['./purchaserequest-lines.component.css']
 })
@@ -20,14 +20,14 @@ export class PurchaseRequestLinesComponent implements OnInit {
 
   constructor(
     private PurchaseRequestSvc: PurchaseRequestService,
-    private PurchaseRequestLineitemSvc: PurchaseRequestLineItemService,
+    private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
     private sys: SystemService,
     private router: Router, 
     private route: ActivatedRoute
   ) { }
 
-  getPurchaseRequestById(id) {
-    this.PurchaseRequestSvc.Get(id)
+  getPurchaseRequestById(Id) {
+    this.PurchaseRequestSvc.Get(Id)
       .subscribe(purchaserequest => {
         this.purchaserequest = purchaserequest;
         console.log("PurchaseRequest:", purchaserequest);

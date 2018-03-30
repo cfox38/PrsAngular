@@ -62,7 +62,7 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
 
     this.route.params
       .subscribe(params => {
-        this.purchaserequestId = params["PRId"];
+        this.purchaserequestId = params["prId"];
         let Id = params["Id"];
         this.getPurchaseRequestLineItemById(Id);
       });  

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { PurchaseRequestLineItemService } from '../../services/purchaserequestlineitem.service';
 import { PurchaseRequestLineItem } from '../../models/purchaserequestlineitem';
-//import { SystemService } from '@services/system.service';
+import { SystemService } from '../../services/system.service';
 
 @Component({
   selector: 'app-purchaserequestlineitem-detail',
@@ -17,7 +17,7 @@ purchaserequestId: number;
 purchaserequestlineitem: PurchaseRequestLineItem;
 
   constructor(
-  	//private sys: SytemService,
+  	private sys: SystemService,
   	private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
   	private route: ActivatedRoute,
   	private router: Router
@@ -45,7 +45,7 @@ remove(): void {
 
     this.route.params
       .subscribe(params => {
-        this.purchaserequestlineitem = params["PRId"];
+        this.purchaserequestlineitem = params["prId"];
         let Id = params["Id"];
         this.getPurchaseRequestLineItemById(Id);
       });  

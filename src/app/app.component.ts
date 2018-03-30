@@ -12,7 +12,9 @@ export class AppComponent implements OnInit {
   isLogin;
   get login() { return "Login is " + this.isLogin; }
 
-  constructor(private SysSvc: SystemService) {
+  constructor(
+    private SysSvc: SystemService
+    ) {
   }
 
   ngOnInit() {

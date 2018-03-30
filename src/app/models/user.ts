@@ -9,7 +9,6 @@ export class User {
 	IsReviewer: boolean;
 	IsAdmin: boolean;
 	Active: boolean;
-	DateCreated: Date;
 
 	constructor(
 
@@ -34,6 +33,5 @@ export class User {
 	this.IsReviewer = IsReviewer;
 	this.IsAdmin = IsAdmin;
 	this.Active = Active;
-	this.DateCreated = new Date();
 	}
 }

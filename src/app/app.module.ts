@@ -4,12 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MenuComponent } from './support/menu/menu.component';
-import { MenuItemComponent } from './support/menu/menu-item.component';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './support/home/home.component';
 import { AboutComponent } from './support/about/about.component';
+import { MenuComponent } from './support/menu/menu.component';
+import { MenuItemComponent } from './support/menu/menu-item.component';
 
 import { UserService } from './services/user.service';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -45,7 +45,7 @@ import { PurchaseRequestLineItemDetailComponent  } from './purchase-request-line
 import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-item/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
 import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-item/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
 
-// import { SortPipe } from './pipes/sort.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 import { SystemService } from '@services/system.service';
 //import { CanReviewGuard } from '@guards/can-review.guard';
 
@@ -55,21 +55,26 @@ import { SystemService } from '@services/system.service';
     AppComponent,
     HomeComponent,
     AboutComponent,
+
     MenuComponent,
     MenuItemComponent,
+
     VendorListComponent,
     VendorDetailComponent,
     VendorCreateComponent,
     VendorEditComponent,
+
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
     UserLoginComponent,
+
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
     ProductListComponent,
+
     PurchaseRequestCreateComponent,
     PurchaseRequestDetailComponent,
     PurchaseRequestEditComponent,
@@ -77,11 +82,13 @@ import { SystemService } from '@services/system.service';
     PurchaseRequestLinesComponent,
     PurchaseRequestReviewItemComponent,
     PurchaseRequestReviewComponent,
+    
     PurchaseRequestLineItemCreateComponent,
     PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemEditComponent,
     PurchaseRequestLineItemListComponent,
-    // SortPipe,
+
+    SortPipe,
 
 
 

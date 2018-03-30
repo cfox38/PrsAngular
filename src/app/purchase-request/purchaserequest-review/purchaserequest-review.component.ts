@@ -4,7 +4,7 @@ import { PurchaseRequest } from '../../models/purchaserequest';
 import { SystemService } from '../../services/system.service';
 
 @Component({
-  selector: 'app-purchase-request-review',
+  selector: 'app-purchaserequest-review',
   templateUrl: './purchaserequest-review.component.html',
   styleUrls: ['./purchaserequest-review.component.css']
 })

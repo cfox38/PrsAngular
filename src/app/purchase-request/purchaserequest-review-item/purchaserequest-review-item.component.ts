@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { PurchaseRequestService } from '@services/purchaserequest.service';
 import { PurchaseRequest } from '../../models/purchaserequest';
 import { SystemService } from '../../services/system.service';
@@ -10,20 +12,47 @@ import { SystemService } from '../../services/system.service';
 })
 export class PurchaseRequestReviewItemComponent implements OnInit {
 
-  pagetitle: string = "PurchaseRequestReviewItem Review";
-  purchaserequests: PurchaseRequest[];
+  pagetitle: string = "PurchaseRequest Review";
+  purchaserequest: PurchaseRequest;
+  isHidden: boolean = true;
 
   constructor(
+    private PurchaseRequestSvc: PurchaseRequestService,
     private sys: SystemService,
-    private PurchaseRequestSvc: PurchaseRequestService
+    private router: Router, 
+    private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
-    this.PurchaseRequestSvc.ReviewList()
-      .subscribe(purchaserequests => {
-        //console.log(purchaserequests);
-        this.purchaserequests = purchaserequests;
+  approve(): void {
+    this.change("APPROVED");
+  }
+  reject(): void {
+    this.change("REJECTED");
+  }
+  private change(status: string): void {
+    this.purchaserequest.Status = status;
+    this.PurchaseRequestSvc.Change(this.purchaserequest)
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigateByUrl("/purchaserequests/review");
+      })
+  }
+
+  getPurchaseRequestById(Id) {
+    this.PurchaseRequestSvc.Get(Id)
+      .subscribe(purchaserequest => {
+        this.purchaserequest = purchaserequest;
+        console.log("PurchaseRequest:", purchaserequest);
       });
   }
-}
 
+  ngOnInit() {
+    this.route.params
+      .subscribe(params => {
+        let Id = params["Id"];
+        this.getPurchaseRequestById(Id);
+      });
+
+  }
+
+}

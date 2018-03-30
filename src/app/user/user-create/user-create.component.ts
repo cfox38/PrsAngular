@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from '@services/system.service';
+
 
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
-import { SystemService } from '@services/system.service';
 
 
 @Component({
@@ -24,7 +25,6 @@ user: User = new User(0, '', '', '', '', '', '', false, false, true);
   	) { }
 
   Create(): void {
-  	console.log("Before Create:", this.user);
   	this.UserSvc.Create(this.user)
   		.subscribe(res => {
   			console.log(res);
