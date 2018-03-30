@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+input[type=checkbox] {
+  height: 2em;
+}
+.select-list {
+  padding: 0;
+}
+#pagetitle span {
+  font-size: 1.3em;
+  font-weight: bold;
+}
