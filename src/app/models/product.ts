@@ -7,7 +7,7 @@ export class Product {
 	Unit: string;
 	PhotoPath: string;
 	Active: boolean;
-	DateCreated: Date;
+	//DateCreated: Date;
 
 	constructor(
 

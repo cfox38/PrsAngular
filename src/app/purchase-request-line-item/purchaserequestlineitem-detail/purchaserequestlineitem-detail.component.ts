@@ -15,6 +15,8 @@ export class PurchaseRequestLineItemDetailComponent implements OnInit {
 pagetitle: string = "PurchaseRequestLineItem Detail";
 purchaserequestId: number;
 purchaserequestlineitem: PurchaseRequestLineItem;
+isHidden: boolean = true;
+
 
   constructor(
   	private sys: SystemService,
@@ -24,12 +26,16 @@ purchaserequestlineitem: PurchaseRequestLineItem;
 
   	) { }
 
+    verify(): void {
+    this.isHidden = false;
+  }
+
 remove(): void {
     console.log(this.purchaserequestlineitem);
     this.PurchaseRequestLineItemSvc.Remove(this.purchaserequestlineitem)
       .subscribe(resp => {
         console.log(resp);
-        this.router.navigateByUrl("/purchaserequest/list/"+this.purchaserequestId);
+        this.router.navigateByUrl("/purchaserequests/list");
       });
   }
 

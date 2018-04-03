@@ -56,8 +56,8 @@ const routes: Routes = [
 	{ path: "purchaserequests/review/:Id", component: PurchaseRequestReviewItemComponent },
 	{ path: "purchaserequests/review", component: PurchaseRequestReviewComponent},
 
-	{ path: "purchaserequestlineitems/detail/:prid/:Id", component: PurchaseRequestLineItemDetailComponent},
-	{ path: "purchaserequestlineitems/edit/:prid/:Id", component: PurchaseRequestLineItemEditComponent},
+	{ path: "purchaserequestlineitems/detail/:prId/:Id", component: PurchaseRequestLineItemDetailComponent},
+	{ path: "purchaserequestlineitems/edit/:prId/:Id", component: PurchaseRequestLineItemEditComponent},
 	{ path: "purchaserequestlineitems/list", component: PurchaseRequestLineItemListComponent},
 	{ path: "purchaserequestlineitems/create/:Id", component: PurchaseRequestLineItemCreateComponent},
 

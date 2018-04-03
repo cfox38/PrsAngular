@@ -39,7 +39,7 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
     console.log(this.purchaserequestlineitem);
     this.PurchaseRequestLineItemSvc.Change(this.purchaserequestlineitem)
       .subscribe(res => {
-        console.log(res);
+        console.log(res, this.purchaserequestId);
         this.router.navigateByUrl("/purchaserequests/lines/"+this.purchaserequestId);
       });
   }
@@ -62,7 +62,7 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
 
     this.route.params
       .subscribe(params => {
-        this.purchaserequestId = params["prId"];
+        this.purchaserequestId = +params["prId"];
         let Id = params["Id"];
         this.getPurchaseRequestLineItemById(Id);
       });  

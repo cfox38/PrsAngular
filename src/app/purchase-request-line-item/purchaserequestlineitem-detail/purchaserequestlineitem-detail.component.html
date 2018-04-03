@@ -4,12 +4,13 @@
   </div>
   <div id="content" *ngIf="purchaserequestlineitem">
     <table class="table table-sm">
-      <tr><th>Id</th><td>{{purchaserequestineitem.Id}}</td></tr>
-      <tr><th>Product</th><td>{{purchaserequestlineitem.Product.Name }}</td></tr>
+      <tr><th>Id</th><td>{{purchaserequestlineitem.Id}}</td></tr>
+      <tr *ngIf="purchaserequestlineitem.Product"><th>Product</th><td>{{purchaserequestlineitem.Product.Name }}</td></tr>
       <tr><th>Quantity</th><td>{{purchaserequestlineitem.Quantity}}</td></tr>
     </table>
-    <a routerLink="/purchaserequestlineitems/edit/{{purchaserequestlineitem.PurchaseRequestId}}/{{purchaserequestlineitem.Id}}" class="btn btn-warning">Edit</a> | 
-    <button (click)="verify()" class="btn btn-danger">Delete</button> |
-    <button [hidden]="isHidden" (click)="remove()" class="btn btn-danger">Verify Delete</button>
-  </div>
+    <a routerLink="/purchaserequestlineitems/edit/{{purchaserequestlineitem.purchaserequestId}}/{{purchaserequestlineitem.Id}}" class="btn btn-warning">Edit</a> | 
+    <button (click)="verify()" class="btn btn-danger">Delete</button>
+    <span [hidden]="isHidden">|
+      <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+    </span>
 </div>
