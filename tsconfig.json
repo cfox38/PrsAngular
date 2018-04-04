@@ -10,8 +10,8 @@
       "@user/*": ["app/user/*"],
       "@vendor/*": ["app/vendor/*"],
       "@product/*": ["app/product/*"],
-      "@purchaseRequest/*": ["app/purchaseRequest/*"],
-      "@purchaseRequestLineitem/*": ["app/purchaseRequestLineitem/*"]
+      "@purchaserequest/*": ["app/purchaserequest/*"],
+      "@purchaserequestlineitem/*": ["app/purchaserequestlineitem/*"]
     }, 
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
