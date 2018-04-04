@@ -7,32 +7,27 @@
 			<label class = 'col-form-label col-sm-2' for="productvendorpartnumber">VendorPartNumber: </label>
 			<input [(ngModel)]='product.VendorPartNumber' name ='VendorPartNumber' type='text'
 			class="from-control col-sm-6" Id="productvendorpartnumber" aria-describedby="VendorPartNumberHelp" placeholder="VendorPartNumber">
-			<small Id = "VendorPartNumberHelp" class= "form-text text-muted col-sum-2"> The vendor part number </small> 
+			<small Id = "VendorPartNumberHelp" class= "form-text text-muted col-sum-2"> Internal ID/SKU for the product </small> 
 		</div>
 		<div class ="form-group row">
 			<label class = 'col-form-label col-sm-2' for="productname">Name: </label>
 			<input [(ngModel)]='product.Name' name ='Name' type='text'
 			class="from-control col-sm-6" Id="Productname" aria-describedby="NameHelp" placeholder="Name">
-			<small Id = "NameHelp" class= "form-text text-muted col-sum-2"> The product name </small> 
+			<small Id = "NameHelp" class= "form-text text-muted col-sum-2"> Name of the product requesting </small> 
 		</div>
 		<div class ="form-group row">
 			<label class = 'col-form-label col-sm-2' for="productprice">Price: </label>
 			<input [(ngModel)]='product.Price' name ='Price' type='text'
 			class="from-control col-sm-6" Id="productprice" aria-describedby="PriceHelp" placeholder="Price">
-			<small Id = "PriceHelp" class= "form-text text-muted col-sum-2"> The product price </small> 
+			<small Id = "PriceHelp" class= "form-text text-muted col-sum-2"> In $</small> 
 		</div>
 		<div class ="form-group row">
 			<label class = 'col-form-label col-sm-2' for="productunit">Unit: </label>
 			<input [(ngModel)]='product.Unit' name ='Unit' type='text'
 			class="from-control col-sm-6" Id="productunit" aria-describedby="UnitHelp" placeholder="Unit">
-			<small Id = "UnitHelp" class= "form-text text-muted col-sum-2"> The product unit </small> 
+			<small Id = "UnitHelp" class= "form-text text-muted col-sum-2"> </small> 
 		</div>
-<!-- 		<div class ="form-group row">
-			<label class = 'col-form-label col-sm-2' for="productphotopath">PhotoPath: </label>
-			<input [(ngModel)]='product.PhotoPath' name ='PhotoPath' type='text'
-			class="from-control col-sm-6" Id="productphotopath" aria-describedby="PhotoPathHelp" placeholder="PhotoPath">
-			<small Id = "PhotoPathHelp" class= "form-text text-muted col-sum-2"> The product photopath </small> 
-		</div> -->
+
 		<div class = 'from-group row'>
 				<label class ='col-from-label col-sm-2' for ="productvendor">Vendor: </label>
 		<div class = 'col-sm-6 select-list'>
@@ -42,6 +37,7 @@
 				vendor.Id == product.VendorId" > {{ vendor.Name }}</option>
 				</select>
 		</div>
+	</div>
 	<div>
 		<button (click)="Change()" class="btn btn-warning" >Change</button>
 	</div>

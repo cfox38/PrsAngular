@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { PurchaseRequestService } from '../../services/purchaserequest.service';
+import { PurchaseRequest } from '../../models/purchaserequest';
 import { PurchaseRequestLineItemService } from '../../services/purchaserequestlineitem.service';
 import { PurchaseRequestLineItem } from '../../models/purchaserequestlineitem';
 import { ProductService } from '../../services/product.service';
@@ -19,13 +21,15 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
   purchaserequestId: number;
   purchaserequestlineitem: PurchaseRequestLineItem;
   products: Product[];
+  purchaserequests: PurchaseRequest[];
 
   constructor(
     private sys: SystemService,
     private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
     private ProductSvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private PurchaseRequestSvc: PurchaseRequestService
   ) { }
 
   // This is used by the <SELECT [compareWith]='compareFn'> to select the FK in a dropdown list
@@ -60,11 +64,12 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
         console.log("Products", products);
       });
 
+
     this.route.params
       .subscribe(params => {
-        this.purchaserequestId = +params["prId"];
         let Id = params["Id"];
         this.getPurchaseRequestLineItemById(Id);
+        this.purchaserequestId = params ["prId"];
       });  
     }
 

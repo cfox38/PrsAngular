@@ -17,7 +17,7 @@ import { SystemService } from '../../services/system.service';
 export class ProductCreateComponent implements OnInit {
 
 pagetitle: string = "Product Create";
-product: Product = new Product(0, 0, '', '', 10, 'Each', '', true);
+product: Product = new Product(0, 0, '', '', 0, '1', '', true);
 vendors: Vendor[];
 
   constructor(

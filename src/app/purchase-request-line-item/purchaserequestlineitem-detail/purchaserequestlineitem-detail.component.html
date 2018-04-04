@@ -8,9 +8,11 @@
       <tr *ngIf="purchaserequestlineitem.Product"><th>Product</th><td>{{purchaserequestlineitem.Product.Name }}</td></tr>
       <tr><th>Quantity</th><td>{{purchaserequestlineitem.Quantity}}</td></tr>
     </table>
-    <a routerLink="/purchaserequestlineitems/edit/{{purchaserequestlineitem.purchaserequestId}}/{{purchaserequestlineitem.Id}}" class="btn btn-warning">Edit</a> | 
-    <button (click)="verify()" class="btn btn-danger">Delete</button>
-    <span [hidden]="isHidden">|
-      <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+
+    <a routerLink="/purchaserequestlineitems/edit/{{purchaserequestId}}/{{purchaserequestlineitem.Id}}" class="btn btn-warning">Edit</a> | 
+    <button (click)="verify()" class="btn btn-danger">Delete</button> 
+    <span [hidden]="isHidden">
+     | <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
     </span>
-</div>
+  </div>
+</div>  

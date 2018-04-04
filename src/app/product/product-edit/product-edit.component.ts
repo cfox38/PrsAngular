@@ -35,7 +35,6 @@ vendors: Vendor[];
   }
 
   Change(): void {
-    this.product.VendorId = null;
     console.log("Product b4 chg", this.product);
   	this.ProductSvc.Change(this.product)
   		.subscribe(res => {

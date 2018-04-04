@@ -15,7 +15,7 @@ import { Vendor } from '../../models/vendor';
 export class VendorCreateComponent implements OnInit {
 
 pagetitle: string = "Vendor Create";
-vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', false, true);
+vendor: Vendor = new Vendor(0, '', '', '', '', '', '', '', '', true, true);
 
   constructor(
   	private VendorSvc: VendorService,

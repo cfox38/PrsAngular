@@ -39,7 +39,7 @@
         <td>{{ purchaserequestlineitem.Product.Price | currency }}</td>
         <td>{{ (purchaserequestlineitem.Quantity * purchaserequestlineitem.Product.Price) | currency }}</td>
         <td>
-            <a routerLink="/purchaserequestlineitems/detail/{{this.purchaserequest.Id}}/{{purchaserequestlineitem.Id}}">Detail</a> |
+           <a routerLink="/purchaserequestlineitems/detail/{{this.purchaserequest.Id}}/{{purchaserequestlineitem.Id}}">Detail</a> |
             <a routerLink="/purchaserequestlineitems/edit/{{this.purchaserequest.Id}}/{{purchaserequestlineitem.Id}}">Edit</a>
         </td>
       </tr>

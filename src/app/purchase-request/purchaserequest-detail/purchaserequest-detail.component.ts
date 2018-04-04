@@ -28,15 +28,16 @@ isHidden: boolean = true;
     this.PurchaseRequestSvc.Change(this.purchaserequest)
       .subscribe(res => {
         console.log(res);
-        this.router.navigateByUrl("/purchaserequests/list");
       });
+      this.router.navigateByUrl("/purchaserequests/list");
+
   }
 
   verify(): void {
     this.isHidden = false;
   }
 
-  remove() : void {
+  remove(): void {
     this.PurchaseRequestSvc.Remove(this.purchaserequest)
     .subscribe(res => {
       console.log(res);

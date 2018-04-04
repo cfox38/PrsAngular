@@ -17,7 +17,7 @@ import { SystemService } from '../../services/system.service';
 export class PurchaseRequestCreateComponent implements OnInit {
 
 pagetitle: string = "PurchaseRequest Create";
-purchaserequest: PurchaseRequest = new PurchaseRequest(0, 0, 'New PR', 'Not needed', '', 'Pickup', 'NEW', true);
+purchaserequest: PurchaseRequest = new PurchaseRequest(0, 0, '', '', '', '', 'NEW', true);
 users: User[];
 
   constructor(

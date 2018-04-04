@@ -39,7 +39,7 @@ users: User[];
   	this.PurchaseRequestSvc.Change(this.purchaserequest)
   		.subscribe(res => {
   			console.log(res);
-  			  	this.router.navigateByUrl("/purchaserequests/list");
+  			  	this.router.navigateByUrl("/purchaserequests/lines/purchaserequestId");
   		});
   }
 

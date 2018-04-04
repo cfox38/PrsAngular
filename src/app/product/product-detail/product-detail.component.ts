@@ -26,22 +26,22 @@ pagetitle: string = "Product Detail";
     verify(): void {
       this.isHidden = false;
     }
+    getProductById(Id) {
+    this.ProductSvc.Get(Id)
+      .subscribe(product => {
+        this.product= product;
+        console.log("Product:", product);
+      });
+  }
 
   remove() : void {
-    this.ProductSvc.Remove(this.product)
-    .subscribe(res => {
+    this.ProductSvc.Remove(this.product) .subscribe(res => {
       console.log(res);
+          });
       this.router.navigateByUrl("/products/list");
-    });
+
   }
 
-  getProductById(Id) {
-  	this.ProductSvc.Get(Id)
-  		.subscribe(product => {
-  			this.product= product;
-  			console.log("Product:", product);
-  		});
-  }
 
   ngOnInit() {
 	this.route.params

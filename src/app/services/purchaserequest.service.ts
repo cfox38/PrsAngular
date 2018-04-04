@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { SystemService } from '../services/system.service';
+//import { SystemService } from '../services/system.service';
 
 import { PurchaseRequest } from '../models/purchaserequest';
 
@@ -10,8 +10,8 @@ const url = "http://localhost:52140/PurchaseRequests/";
 @Injectable()
 export class PurchaseRequestService {
 
-  constructor(private http: HttpClient,
-    private sys: SystemService
+  constructor(private http: HttpClient
+    //private sys: SystemService
     ) { }
 
   ReviewList(): Observable<PurchaseRequest[]> {
