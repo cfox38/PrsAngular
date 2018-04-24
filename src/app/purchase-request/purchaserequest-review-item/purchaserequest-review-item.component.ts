@@ -15,6 +15,7 @@ export class PurchaseRequestReviewItemComponent implements OnInit {
   pagetitle: string = "PurchaseRequest Review";
   purchaserequest: PurchaseRequest;
   isHidden: boolean = true;
+  verifyReject: boolean = false;
 
   constructor(
     private PurchaseRequestSvc: PurchaseRequestService,
@@ -26,6 +27,11 @@ export class PurchaseRequestReviewItemComponent implements OnInit {
   approve(): void {
     this.change("APPROVED");
   }
+
+  verify(): void {
+    this.verifyReject = true;
+  }
+  
   reject(): void {
     this.change("REJECTED");
   }

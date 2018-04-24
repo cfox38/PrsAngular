@@ -24,12 +24,12 @@ isHidden: boolean = true;
   	) { }
 
     review(): void {
-    this.purchaserequest.Status = (this.purchaserequest.Total <= 50) ? "APPROVED" : "REVIEW";
+    this.purchaserequest.Status = (this.purchaserequest.Total <= 50) && (this.purchaserequest.Total >0) ? "APPROVED" : "REVIEW";
     this.PurchaseRequestSvc.Change(this.purchaserequest)
       .subscribe(res => {
         console.log(res);
+              this.router.navigateByUrl("/purchaserequests/list");
       });
-      this.router.navigateByUrl("/purchaserequests/list");
 
   }
 

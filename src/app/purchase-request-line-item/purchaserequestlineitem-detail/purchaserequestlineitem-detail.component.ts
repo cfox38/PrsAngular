@@ -39,6 +39,7 @@ remove(): void {
     console.log(this.purchaserequestlineitem);
     this.PurchaseRequestLineItemSvc.Remove(this.purchaserequestlineitem)
       .subscribe(res => {
+        console.log(this.purchaserequestlineitem)
         this.router.navigateByUrl("/purchaserequests/lines/"+this.purchaserequestId);
       });
   }

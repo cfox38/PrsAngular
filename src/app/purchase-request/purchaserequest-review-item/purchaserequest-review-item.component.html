@@ -30,7 +30,7 @@
         <th>Price</th>
         <th>Subtotal</th>
       </tr>
-      <tr *ngFor="let purchaserequestlineitem of purchaserequest.purchaserequestlineitems">
+      <tr *ngFor="let purchaserequestlineitem of purchaserequest.PurchaseRequestLineItems">
         <td>{{ purchaserequestlineitem.Id }}</td>
         <td>{{ purchaserequestlineitem.Product.Name }}</td>
         <td>{{ purchaserequestlineitem.Quantity }}</td>
@@ -40,5 +40,15 @@
     </table>
     <button (click)="approve()" class="btn btn-success">Approve</button> |
     <button (click)="reject()" class="btn btn-danger">Reject</button>
+   <span [hidden]="!verifyReject"> | <button (click)="reject()" class="btn btn-danger">Verify Reject</button>
+      <div>
+        <p></p>
+        <div class="form-group row">
+          <label class='col-form-label col-sm-2' for="purchaseRequestRejectionReason">RejectionReason:</label>
+          <input [(ngModel)]='purchaserequest.RejectionReason' name='RejectionReason' type="text" class="form-control col-sm-6" id="purchaseRequestRejectionReason" aria-describedby="RejectionReasonHelp" placeholder="RejectionReason">
+          <small id="RejectionReasonHelp" class="form-text text-muted col-sm-2"></small>
+        </div> 
+      </div>
+    </span>
   </div>
 </div>
